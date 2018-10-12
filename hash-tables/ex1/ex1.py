@@ -1,6 +1,12 @@
 def get_indices_of_item_weights(weights, limit):
   dict = {}
   i = 0
+
+  if len(weights) == 1:
+    return ()
+  if len(weights) == 2:
+    if (weights[0] + weights[1] == limit):
+      return (1,0)
   while i < len(weights):
     dict[weights[i]] = i
     i += 1
